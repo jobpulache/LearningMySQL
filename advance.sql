@@ -20,3 +20,8 @@ SELECT * FROM servicios WHERE nombre LIKE 'Corte%';
 SELECT * FROM servicios WHERE nombre LIKE '%Corte';
 #SEARCH (Inicia o finaliza con)
 SELECT * FROM servicios WHERE nombre LIKE '%Corte%';
+SELECT * FROM servicios WHERE nombre LIKE '%Cabello%';
+SELECT * FROM servicios WHERE nombre LIKE '%Lavado%';
+
+#CONCAT
+SELECT CONCAT(nombre, apellido) AS NameComplete FROM reservaciones;
