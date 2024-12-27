@@ -13,3 +13,10 @@ SELECT MAX(precio) FROM servicios;
 
 #SET MIN PRICE
 SELECT MIN(precio) FROM servicios;
+
+#SEARCH  Lo que estamos buscando inicia con la palabra corte.(Inicia con?
+SELECT * FROM servicios WHERE nombre LIKE 'Corte%'; 
+#SEARCH (finaliza con)
+SELECT * FROM servicios WHERE nombre LIKE '%Corte';
+#SEARCH (Inicia o finaliza con)
+SELECT * FROM servicios WHERE nombre LIKE '%Corte%';
