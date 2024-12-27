@@ -24,4 +24,12 @@ SELECT * FROM servicios WHERE nombre LIKE '%Cabello%';
 SELECT * FROM servicios WHERE nombre LIKE '%Lavado%';
 
 #CONCAT
-SELECT CONCAT(nombre, apellido) AS NameComplete FROM reservaciones;
+SELECT CONCAT(nombre, " " , apellido) AS NameComplete FROM reservaciones;
+#CONCAT AND LIKE
+SELECT   * FROM reservaciones WHERE CONCAT(nombre, ' ', apellido) LIKE '%Ana Preciado%';
+#More info.
+SELECT hora, fecha, CONCAT(nombre, " ", apellido) AS NameComplete FROM reservaciones
+WHERE CONCAT(nombre, " ", apellido) LIKE '%Ana Preciado%';
+    
+
+
