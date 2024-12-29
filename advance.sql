@@ -39,7 +39,16 @@ SELECT * FROM reservaciones WHERE fecha = "2021-06-28" AND id=1 AND nombre = "Ju
 
 #ADD normalization
 USE Appsalon;
-DROP TABLE reservaciones;
+DROP TABLE clientes;
+
+CREATE TABLE clientes( 
+id INT NOT NULL AUTO_INCREMENT,
+userName VARCHAR(20) NOT NULL,
+lastName VARCHAR(20) NOT NULL,
+phone VARCHAR(9) NOT NULL,
+email VARCHAR(20) NOT NULL UNIQUE,
+PRIMARY KEY(id)
+);
 
 
 
