@@ -37,5 +37,9 @@ SELECT * FROM reservaciones WHERE id = (3 AND 9);
 SELECT * FROM reservaciones WHERE fecha = "2021-06-28" AND id=1;
 SELECT * FROM reservaciones WHERE fecha = "2021-06-28" AND id=1 AND nombre = "Juan";
 
+#ADD normalization
+USE Appsalon;
+DROP TABLE reservaciones;
+
 
 
