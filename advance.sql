@@ -70,22 +70,32 @@ INSERT INTO citas(fecha, hora, clienteId) VALUES('2025-03-29', '10:20:00', 1);
 select * from citas;
 drop table citas;
 SELECT * FROM citas INNER JOIN clientes ON clientes.id = citas.clienteId;
-INSERT INTO clientes(userName, lastName, phone, email) VALUES ("manu", "Laid", 123456789, 
-"manu@gmail.com"); 
+INSERT INTO clientes(userName, lastName, phone, email) VALUES ("manuTwo", "Laid", 123456789, 
+"manuJob@gmail.com"); 
 SELECT * FROM citas RIGHT JOIN clientes ON clientes.id = citas.clienteId;
 
 #CREATING TABLE PIVOTE
-CREATE TABLE citasServicios(
+CREATE TABLE CitasServicios(
 id INT NOT NULL AUTO_INCREMENT,
-CitaId INT NOT NULL,
-ServicioId INT NOT NULL,
-PRIMARY KEY(id),
-KEY CitaId(CitaId),
-CONSTRAINT Cita_FK
-FOREIGN KEY(CitaId)
+CitasId INT NOT NULL,
+ServiciosId INT NOT NULL,
+PRIMARY KEY(id), 
+KEY CitasId(CitasId),
+CONSTRAINT Citas_FK
+FOREIGN KEY(CitasId)
 REFERENCES citas(id),
-Key ServicioId(ServicioId),
-CONSTRAINT Servicio_FK
-FOREIGN KEY(ServicioId)
-REFERENCES servicios(id));
+KEY ServiciosId(ServiciosId),
+CONSTRAINT Servicios_FK
+FOREIGN KEY(ServiciosId)
+REFERENCES servicios(id)
+);
+SELECT * FROM servicios;
+INSERT INTO citas (fecha, hora, clienteId) VALUES("2023-10-20", "02:30:00", 1); 
+INSERT INTO CitasServicios(CitasId, ServiciosId) VALUES(1,3);
+
+#Set information in table pivote
+SELECT * FROM CitasServicios
+LEFT JOIN citas ON citas.id = CitasServicios.CitasId
+LEFT JOIN servicios ON servicios.id = CitasServicios.ServiciosId;
+
 
