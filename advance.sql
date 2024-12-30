@@ -55,14 +55,19 @@ SHOW TABLES;
 SELECT * FROM clientes;
 #Creating table citas 
 CREATE TABLE citas(
-id INT NOT NULL AUTO_INCREMENT,
+id 	INT NOT NULL AUTO_INCREMENT,
 fecha DATE NOT NULL,
 hora TIME NOT NULL,
 clienteId INT NOT NULL,
 PRIMARY KEY(id),
 KEY clienteId(clienteId),
-CONSTRAINT cliente_FK
+CONSTRAINT cliente_PK
 FOREIGN KEY(clienteId)
 REFERENCES clientes(id));
 
+describe servicios;
+INSERT INTO citas(fecha, hora, clienteId) VALUES('2025-03-29', '10:20:00', 1);
+select * from citas;
 drop table citas;
+
+SELECT * FROM citas INNER JOIN clientes ON clientes.id = citas.clienteId;
