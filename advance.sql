@@ -94,8 +94,9 @@ INSERT INTO citas (fecha, hora, clienteId) VALUES("2023-10-20", "02:30:00", 1);
 INSERT INTO CitasServicios(CitasId, ServiciosId) VALUES(1,3);
 
 #Set information in table pivote
-SELECT * FROM CitasServicios
+SELECT * FROM CitasServicios 
 LEFT JOIN citas ON citas.id = CitasServicios.CitasId
+LEFT JOIN clientes ON citas.clienteId = clientes.id
 LEFT JOIN servicios ON servicios.id = CitasServicios.ServiciosId;
-
-
+INSERT INTO CitasServicios(	CitasId, ServiciosId) VALUES(2, 8);
+select * from CitasServicios;
