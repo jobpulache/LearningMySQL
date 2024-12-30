@@ -49,6 +49,20 @@ phone VARCHAR(9) NOT NULL,
 email VARCHAR(20) NOT NULL UNIQUE,
 PRIMARY KEY(id)
 );
+INSERT INTO clientes (userName, lastName, phone, email) VALUES("job", "manu DL", 930938449, "job@gmail.com");
+select * from clientes;
+SHOW TABLES;
+SELECT * FROM clientes;
+#Creating table citas 
+CREATE TABLE citas(
+id INT NOT NULL AUTO_INCREMENT,
+fecha DATE NOT NULL,
+hora TIME NOT NULL,
+clienteId INT NOT NULL,
+PRIMARY KEY(id),
+KEY clienteId(clienteId),
+CONSTRAINT cliente_FK
+FOREIGN KEY(clienteId)
+REFERENCES clientes(id));
 
-
-
+drop table citas;
