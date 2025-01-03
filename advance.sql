@@ -100,4 +100,12 @@ LEFT JOIN clientes ON citas.clienteId	 = clientes.id
 LEFT JOIN servicios ON servicios.id = CitasServicios.ServiciosId;
 INSERT INTO CitasServicios(	CitasId, ServiciosId) VALUES(2, 8);
 select * from CitasServicios;
-
+#Join two or more tablets
+SELECT * FROM CitasServicios LEFT JOIN citas ON citas.id = CitasServicios.citasId
+LEFT JOIN servicios ON servicios.id = CitasServicios.serviciosId;
+Use appsalon;
+#Multiples Join 
+select * from citasServicios;
+SELECT * FROM CitasServicios LEFT JOIN citas ON citas.id = CitasServicios.citasId
+LEFT JOIN clientes ON citas.clienteId = clientes.id
+LEFT JOIN servicios ON servicios.id = CitasServicios.serviciosId;
